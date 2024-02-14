@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualization Lab 1</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <script src="./script.js"></script>
+    <div class="header">
+        <h1>2023 YouTube Statistics</h1>
+    </div>
+    <!-- dropdown menu for selecting the columns to visualize -->
+    <div class="dropdown">
+        <select id="dropdown">
+            <option value="none">Select a column</option>
+            <option value="population">Population</option>
+            <option value="education">Education</option>
+            <option value="income">Income</option>
+        </select>
+    </div>
+    <div class="chart">
+        <!--chart will be added here--> 
+    </div>
+    <!--button to flip the histograms and bar charts between horizontal and vertical, it should show flip horizontal when bar is vertical and vise versa--> 
+    <div class="flip">
+        <button id="flip">Flip</button>
+    </div>
+
+    <div class="footer">
+        <p>Source: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/global-youtube-statistics-2023/data">Kaggle Datasets</a></p>
+    </div>
+  </body>
