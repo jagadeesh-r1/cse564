@@ -123,7 +123,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 var svg = d3.select('#chart').append('svg')
                         .attr('width', width)
                         .attr('height', height);
-                var margin = { top: 30, right: 30, bottom: 90, left: 60 };
+                var margin = { top: 30, right: 30, bottom: 90, left: 90 };
                 var innerWidth = width - margin.left - margin.right;
                 var innerHeight = height - margin.top - margin.bottom;
                 var x = d3.scaleLinear()
@@ -192,13 +192,13 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     .attr('height', d => innerHeight - y(d.length)); // End with the final height
                 g.append('text')
                     .attr('x', innerWidth / 2)
-                    .attr('y', innerHeight + 30)
+                    .attr('y', innerHeight + 60)
                     .attr('text-anchor', 'middle')
                     .attr('fill', 'white')
                     .text(selectedOption);
                 g.append('text')
                     .attr('x', -innerHeight / 2)
-                    .attr('y', -30)
+                    .attr('y', -50)
                     .attr('transform', 'rotate(-90)')
                     .attr('text-anchor', 'middle')
                     .attr('fill', 'white')
@@ -265,13 +265,13 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     .attr('height', d => y(d.x0) - y(d.x1)); // End with the final height
                 g.append('text')
                     .attr('x', innerWidth / 2)
-                    .attr('y', innerHeight + 30)
+                    .attr('y', innerHeight + 60)
                     .attr('text-anchor', 'middle')
                     .attr('fill', 'white')
                     .text('Frequency');
                 g.append('text')
                     .attr('x', -innerHeight / 2)
-                    .attr('y', -30)
+                    .attr('y', -50)
                     .attr('transform', 'rotate(-90)')
                     .attr('fill', 'white')
                     .attr('text-anchor', 'middle')
@@ -359,12 +359,12 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 g.append('text')
                     .attr('x', innerWidth / 2)
                     .attr('fill', 'white')
-                    .attr('y', innerHeight + 30)
+                    .attr('y', innerHeight + 60)
                     .attr('text-anchor', 'middle')
                     .text(selectedOption);
                 g.append('text')
                     .attr('x', -innerHeight / 2)
-                    .attr('y', -30)
+                    .attr('y', -50)
                     .attr('transform', 'rotate(-90)')
                     .attr('text-anchor', 'middle')
                     .attr('fill', 'white')
@@ -442,13 +442,13 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     .attr('height', y.bandwidth()); // End with the final height
                 g.append('text')
                     .attr('x', innerWidth / 2)
-                    .attr('y', innerHeight + 30)
+                    .attr('y', innerHeight + 60)
                     .attr('text-anchor', 'middle')
                     .attr('fill', 'white')
                     .text('Frequency');
                 g.append('text')
                     .attr('x', -innerHeight / 2)
-                    .attr('y', -30)
+                    .attr('y', -50)
                     .attr('transform', 'rotate(-90)')
                     .attr('fill', 'white')
                     .attr('text-anchor', 'middle')
@@ -590,7 +590,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     var svg = d3.select('#chart').append('svg')
                         .attr('width', width)
                         .attr('height', height);
-                    var margin = { top: 30, right: 30, bottom: 90, left: 60 };
+                    var margin = { top: 30, right: 30, bottom: 90, left: 100 };
                     var innerWidth = width - margin.left - margin.right;
                     var innerHeight = height - margin.top - margin.bottom;
                     var x;
@@ -649,13 +649,13 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                         .text(d => `x: ${d[xOption]}, y: ${d[yOption]}`);
                     g.append('text')
                         .attr('x', innerWidth / 2)
-                        .attr('y', innerHeight + 30)
+                        .attr('y', innerHeight + 60)
                         .attr('text-anchor', 'middle')
                         .attr('fill', 'white')
                         .text(xOption);
                     g.append('text')
                         .attr('x', -innerHeight / 2)
-                        .attr('y', -30)
+                        .attr('y', -80)
                         .attr('transform', 'rotate(-90)')
                         .attr('fill', 'white')
                         .attr('text-anchor', 'middle')
