@@ -6,17 +6,33 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <script src="./script.js"></script>
     <div class="header">
         <h1>2023 YouTube Statistics</h1>
     </div>
     <!-- dropdown menu for selecting the columns to visualize -->
     <div class="dropdown">
         <select id="dropdown">
-            <option value="none">Select a column</option>
+            <option value="Select_Column">Select a column</option>
+            <option value="title">YouTube Channel Name</option>
+            <option value="subscribers">Subscribers</option>
+            <option value="views">Channel Views</option>
+            <option value="uploads">No of Videos</option>
+            <option value="country">Country</option>
+            <option value="category">Category</option>
+            <option value="channel_type">Channel Type</option>
+            <option value="video_views_rank">Rank by Views</option>
+            <option value="country_rank">Country Rank</option>
+            <option value="channel_type_rank">Channel_type_rank</option>
+            <option value="video_views_for_the_last_30_days">December View Count</option>
+            <option value="lowest_monthly_earnings">Lowest Yearly Earnings</option>
+            <option value="highest_yearly_earnings">Highest Yearly Earnings</option>
+            <option value="subscribers_for_last_30_days">December Subscribers</option>
+            <option value="created_year">Created Year</option>
+            <option value="gross_tertiary_education_enrollment">Gross tertiary education enrollment (%)</option>
             <option value="population">Population</option>
-            <option value="education">Education</option>
-            <option value="income">Income</option>
+            <option value="unemployment_rate">Unemployment Rate (%)</option>
+            <option value="urban_population">Urban Population</option>
+            <option value="continent">Continent</option>
         </select>
     </div>
     <div class="chart">
@@ -30,4 +46,5 @@
     <div class="footer">
         <p>Source: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/global-youtube-statistics-2023/data">Kaggle Datasets</a></p>
     </div>
+    <script src="./script.js"></script>
   </body>
