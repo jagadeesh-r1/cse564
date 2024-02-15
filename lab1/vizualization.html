@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Visualization Lab 1</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -10,41 +10,46 @@
         <h1>2023 YouTube Statistics</h1>
     </div>
     <!-- dropdown menu for selecting the columns to visualize -->
-    <div class="dropdown">
-        <select id="dropdown">
-            <option value="Select_Column">Select a column</option>
-            <option value="title">YouTube Channel Name</option>
-            <option value="subscribers">Subscribers</option>
-            <option value="views">Channel Views</option>
-            <option value="uploads">No of Videos</option>
-            <option value="country">Country</option>
-            <option value="category">Category</option>
-            <option value="channel_type">Channel Type</option>
-            <option value="video_views_rank">Rank by Views</option>
-            <option value="country_rank">Country Rank</option>
-            <option value="channel_type_rank">Channel_type_rank</option>
-            <option value="video_views_for_the_last_30_days">December View Count</option>
-            <option value="lowest_monthly_earnings">Lowest Yearly Earnings</option>
-            <option value="highest_yearly_earnings">Highest Yearly Earnings</option>
-            <option value="subscribers_for_last_30_days">December Subscribers</option>
-            <option value="created_year">Created Year</option>
-            <option value="gross_tertiary_education_enrollment">Gross tertiary education enrollment (%)</option>
-            <option value="population">Population</option>
-            <option value="unemployment_rate">Unemployment Rate (%)</option>
-            <option value="urban_population">Urban Population</option>
-            <option value="continent">Continent</option>
-        </select>
-    </div>
-    <div class="chart">
-        <!--chart will be added here--> 
-    </div>
-    <!--button to flip the histograms and bar charts between horizontal and vertical, it should show flip horizontal when bar is vertical and vise versa--> 
-    <div class="flip">
-        <button id="flip">Flip</button>
-    </div>
+    <div class="content">
+        <div class="dropdown">
+            <label for="dropdown">Select a column to visualize:</label>
+            <select id="dropdown">
+                <option value="Select_Column">Select a column</option>
+                <!--option value="title">YouTube Channel Name</option-->
+                <option value="subscribers">Subscribers</option>
+                <option value="views">Channel Views</option>
+                <option value="uploads">No of Videos</option>
+                <option value="country">Country</option>
+                <option value="category">Category</option>
+                <option value="channel_type">Channel Type</option>
+                <option value="video_views_rank">Rank by Views</option>
+                <option value="country_rank">Country Rank</option>
+                <option value="channel_type_rank">Channel_type_rank</option>
+                <option value="video_views_for_the_last_30_days">December View Count</option>
+                <option value="lowest_monthly_earnings">Lowest Yearly Earnings</option>
+                <option value="highest_yearly_earnings">Highest Yearly Earnings</option>
+                <option value="subscribers_for_last_30_days">December Subscribers</option>
+                <option value="created_year">Created Year</option>
+                <option value="gross_tertiary_education_enrollment">Gross tertiary education enrollment (%)</option>
+                <option value="population">Population</option>
+                <option value="unemployment_rate">Unemployment Rate (%)</option>
+                <option value="urban_population">Urban Population</option>
+                <option value="continent">Continent</option>
+            </select>
+        </div>
+        <!--button to flip the histograms and bar charts between horizontal and vertical, it should show flip horizontal when bar is vertical and vise versa--> 
+        <div class="flip">
+            <button id="flip" class="fancy-button">Flip the Chart</button>
+        </div>
+        <div id="chart">
+            <!--chart will be added here--> 
+            <svg width="960" height="500"></svg>
+        </div>
 
+        <script src="./script.js"></script>
+    </div>
     <div class="footer">
         <p>Source: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/global-youtube-statistics-2023/data">Kaggle Datasets</a></p>
     </div>
-    <script src="./script.js"></script>
+    
   </body>
