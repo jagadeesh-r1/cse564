@@ -5,6 +5,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
+#youtube-logo {
+    height: 100px; /* Adjust as needed */
+    width: auto; /* Keep the aspect ratio */
+}
+
 body {
     background-color: rgb(215, 245, 255);
     display: flex;
@@ -59,12 +64,15 @@ select {
 label {
   font-size: 20px;
   font-family: Arial, sans-serif;
-  color: #f74b4b;
+  color: #ffffff;
 }
 
 svg {
+  display: flex;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #000000;
+  align-items: center;
+
 }
 
 .visually-hidden {
