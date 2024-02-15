@@ -53,6 +53,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
         console.log(dataObjects);
 
         var selectElement = document.getElementById('dropdown');
+        var scatterCheckbox = document.getElementById('scatter');
         let width = 960;
         let height = 500;
 
@@ -127,7 +128,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 var svg = d3.select('#chart').append('svg')
                         .attr('width', width)
                         .attr('height', height);
-                var margin = { top: 30, right: 50, bottom: 50, left: 50 };
+                var margin = { top: 30, right: 30, bottom: 90, left: 60 };
                 var innerWidth = width - margin.left - margin.right;
                 var innerHeight = height - margin.top - margin.bottom;
                 var x = d3.scaleLinear()
@@ -165,7 +166,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 const colorScale = d3.scaleSequential()
                     .domain([0, bins.length])
                     .interpolator(d3.interpolateRainbow);
-                const tooltip = d3.select('body').append('div')
+                const tooltip = d3.select('#chart').append('div')
                     .attr('class', 'tooltip')
                     .style('opacity', 0);
                 // Create rectangles
@@ -235,7 +236,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 const colorScale = d3.scaleSequential()
                     .domain([0, bins.length])
                     .interpolator(d3.interpolateRainbow);
-                const tooltip = d3.select('body').append('div')
+                const tooltip = d3.select('#chart').append('div')
                     .attr('class', 'tooltip')
                     .style('opacity', 0);
                 // Adjust the rectangle attributes
@@ -296,7 +297,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 var svg = d3.select('#chart').append('svg')
                     .attr('width', width)
                     .attr('height', height);
-                var margin = { top: 30, right: 30, bottom: 90, left: 40 };
+                var margin = { top: 30, right: 30, bottom: 90, left: 60 };
                 var innerWidth = width - margin.left - margin.right;
                 var innerHeight = height - margin.top - margin.bottom;
                 // with the dataColumn, create a map of the frequency of each value and use it to create a bar chart
@@ -322,7 +323,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 g.append('g')
                     .call(d3.axisLeft(y));
 
-                const tooltip = d3.select('body').append('div')
+                const tooltip = d3.select('#chart').append('div')
                     .attr('class', 'tooltip')
                     .style('opacity', 0);
 
@@ -379,7 +380,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                 var svg = d3.select('#chart').append('svg')
                     .attr('width', width)
                     .attr('height', height);
-                var margin = { top: 30, right: 30, bottom: 90, left: 40 };
+                var margin = { top: 30, right: 30, bottom: 90, left: 60 };
                 var innerWidth = width - margin.left - margin.right;
                 var innerHeight = height - margin.top - margin.bottom;
                 // with the dataColumn, create a map of the frequency of each value and use it to create a bar chart
@@ -401,7 +402,7 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     .call(d3.axisBottom(x));
                 g.append('g')
                     .call(d3.axisLeft(y));
-                const tooltip = d3.select('body').append('div')
+                const tooltip = d3.select('#chart').append('div')
                     .attr('class', 'tooltip')
                     .style('opacity', 0);
                 const colorScale = d3.scaleSequential()
@@ -453,33 +454,36 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
                     .text('Bar chart of ' + selectedOption);
             }
 
+            if (scatterCheckbox.checked) {
+                
+            }
+            else {
+                d3.select('#flip').on('click', function() {
+                    d3.select('svg').remove();
+                    console.log(isVertical);
+                    if (isVertical) {
+                        if (neumerical_columns.includes(selectedOption)) {
+                            isVertical = !isVertical;
+                            createHorizontalHistogram();
+                        }
+                        else {
+                            isVertical = !isVertical;
+                            createHorizontalBarChart();
+                        }
+                    } else {
+                        if (neumerical_columns.includes(selectedOption)) {
+                            isVertical = !isVertical;
+                            createVerticalHistogram();
+                        }
+                        else {
+                            isVertical = !isVertical;
+                            createVerticalBarChart();
+                        }
+                    // console.log(isVertical);
 
-            d3.select('#flip').on('click', function() {
-                d3.select('svg').remove();
-                console.log(isVertical);
-                if (isVertical) {
-                    if (neumerical_columns.includes(selectedOption)) {
-                        isVertical = !isVertical;
-                        createHorizontalHistogram();
                     }
-                    else {
-                        isVertical = !isVertical;
-                        createHorizontalBarChart();
-                    }
-                } else {
-                    if (neumerical_columns.includes(selectedOption)) {
-                        isVertical = !isVertical;
-                        createVerticalHistogram();
-                    }
-                    else {
-                        isVertical = !isVertical;
-                        createVerticalBarChart();
-                    }
-                console.log(isVertical);
-
-                }
-            });
-            
+                });
+            }
         });
 
     })
