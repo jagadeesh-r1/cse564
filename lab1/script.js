@@ -5,30 +5,28 @@ fetch('https://raw.githubusercontent.com/jagadeesh-r1/cse564/master/lab1/youtube
         const rows = data.split('\n');
         const headers = rows[0].split(',');
         var categorical_columns = [
-            "category",
-            "country",
-            "channel_type",
-            "video_views_rank",
-            "country_rank",
-            "channel_type_rank",
-            "created_year",
-            "continent"
+            "Channel Category",
+            "Country",
+            "Channel Sub-Category",
+            "Rank by Video Views",
+            "Country Rank",
+            "Channel Category Rank",
+            "Channel Created Year",
+            "Continent"
         ]
     
         var neumerical_columns = [
-            "subscribers",
-            "views",
-            "uploads",
-            "video_views_for_the_last_30_days",
-            "lowest_monthly_earnings",
-            "highest_monthly_earnings",
-            "lowest_yearly_earnings",
-            "highest_yearly_earnings",
-            "subscribers_for_last_30_days",
-            "gross_tertiary_education_enrollment",
-            "population",
-            "unemployment_rate",
-            "urban_population"
+            "Subscriber Count",
+            "Channel Views",
+            "Video Uploads",
+            "Views in December",
+            "Lowest Yearly Earnings",
+            "Highest Yearly Earnings",
+            "December Subscriber Gain",
+            "Gross tertiary education enrollment(%)",
+            "Population",
+            "Unemployment Rate(%)",
+            "Urban Population"
         ]
 
         const dataObjects = rows.slice(1)
