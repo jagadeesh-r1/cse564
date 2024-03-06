@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualization Lab 1</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #ff0000, #b31217, #660000);
+        color: white;
+      }
+      .header {
+        text-align: center;
+        padding: 20px;
+        /* background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6; */
+      }
+      .content {
+        padding: 20px;
+      }
+      .dropdown, .flip, .scatter {
+        margin-bottom: 20px;
+      }
+      #chart {
+        display: flex;
+        justify-content: center;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+        <img src='https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png' alt="YouTube Logo" id="youtube-logo">
+        <h1>2023 YouTube Statistics</h1>
+    </div>
+    <!-- dropdown menu for selecting the columns to visualize -->
+    <div class="content">
+        <div class="dropdown">
+            <label for="dropdown">Select a column to visualize:</label>
+            <select id="dropdown">
+                <option value="Select_Column">Select a column</option>
+                <!--option value="Channel Name">YouTube Channel Name</option-->
+                <option value="Subscriber Count">Subscribers</option>
+                <option value="Channel Views">Channel Views</option>
+                <option value="Video Uploads">No of Videos Uploaded</option>
+                <option value="Country">Country</option>
+                <option value="Channel Category">Channel Category</option>
+                <option value="Channel Sub-Category">Channel Sub-Category</option>
+                <option value="Rank by Video Views">Rank by Views</option>
+                <option value="Country Rank">Country Rank</option>
+                <option value="Channel Category Rank">Channel Category Rank</option>
+                <option value="Views in December">December View Count</option>
+                <option value="Lowest Yearly Earnings">Lowest Yearly Earnings</option>
+                <option value="Highest Yearly Earnings">Highest Yearly Earnings</option>
+                <option value="December Subscriber Gain">December Subscribers Gain</option>
+                <option value="Channel Created Year">Channel Created Year</option>
+                <option value="Gross tertiary education enrollment(%)">Gross tertiary education enrollment (%)</option>
+                <option value="Population">Population</option>
+                <option value="Unemployment Rate(%)">Unemployment Rate (%)</option>
+                <option value="Urban Population">Urban Population</option>
+                <option value="Continent">Continent</option>
+            </select>
+        </div>
+        <!--button to flip the histograms and bar charts between horizontal and vertical, it should show flip horizontal when bar is vertical and vise versa--> 
+        <div class="scatter">
+            <label for="scatter">Show Scatter Plot</label>
+            <input type="checkbox" id="scatter" name="scatter">
+            <div id="radio-container"></div>
+        </div>
+        <div class="flip">
+            <button id="flip" class="fancy-button">Flip the Chart</button>
+        </div>
+        <div id="chart">
+            <!--chart will be added here--> 
+            <svg width="960" height="500"></svg>
+        </div>
+
+        <script src="./script.js"></script>
+    </div>
+    <div class="footer">
+        <p>Source: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/global-youtube-statistics-2023/data">Kaggle Datasets</a></p>
+    </div>
+    
+  </body>
