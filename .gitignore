@@ -1,0 +1,6 @@
+# ignore virtual env files
+
+flask_backend/
+react_frontend/
+
+*/*.pyc
