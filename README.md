@@ -7,4 +7,4 @@ This project is Creating a visual dashboard consisting the Histogram, Bar Chart 
 ## Automotive DataStats
 
 
-## Final Prject: StellarScope
+## Final Project: StellarScope
